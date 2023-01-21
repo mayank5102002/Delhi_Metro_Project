@@ -118,7 +118,9 @@ function main() {
   var path = driverCode(src, dest);
 
   //Printing out the route
-  console.log(path);
+  // console.log(path);
+
+  return path;
 }
 
-main();//main
+module.exports = {main, driverCode}

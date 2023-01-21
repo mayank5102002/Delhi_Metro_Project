@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+const algo = require('./utils/Algo.js')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -26,6 +27,25 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about')
+})
+
+app.get('/path', (req, res) => {
+    if(!req.query.source || !req.query.destination){
+        var path = algo.main()
+
+        return res.send({
+            path
+        })
+    }
+
+    const source = req.query.source
+    const destination = req.query.destination
+
+    var path = algo.driverCode(source, destination)
+
+    return res.send({
+        path
+    })
 })
 
 app.listen(port, () => {

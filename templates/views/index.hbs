@@ -25,32 +25,34 @@
 			<h3>METRO ROUTE NAVIGATOR</h3>
 			<h1>FIND YOUR ROUTE <span class="change_content"> </span> <span style="margin-top: -10px;"> | </span> </h1>
 			
-			<input href="#" class="source" type=text list="stations1" name="myStation" placeholder="SELECT SOURCE"></input>
+			<input href="#" class="source" type=text list="stations1" name="myStation" placeholder="SELECT SOURCE" id="source1"></input>
 			<datalist id="stations1" class="btnone">
 			<option value="KASHMERE GATE"></option>
-			<option value="NEHRU ENCLAVE"></option>
 			<option value="NEHRU PLACE"></option>
-			<option value="RAJIV CHOWK"></option>
-			<option value="RAJA NAHAR SINGH"></option>
+			<option value="KALKAJI MANDIR"></option>
+			<option value="RAJ BAGH"></option>
 			</datalist>
 
-			<input href="#" class="dest" type=text list="stations2" name="myStation" placeholder="SELECT DESTINATION"></input>
+			<input href="#" class="dest" type=text list="stations2" name="myStation" placeholder="SELECT DESTINATION" id="source2"></input>
 			<datalist id="stations2" class="btnone">
 			<option value="KASHMERE GATE"></option>
-			<option value="NEHRU ENCLAVE"></option>
 			<option value="NEHRU PLACE"></option>
-			<option value="RAJIV CHOWK"></option>
-			<option value="RAJA NAHAR SINGH"></option>
+			<option value="KALKAJI MANDIR"></option>
+			<option value="RAJ BAGH"></option>
 			</datalist>
 			
 
-			<a href="#" class="btntwo">FIND ROUTE</a>
+			<a href="#" class="btntwo" id="routeButton">FIND ROUTE</a>
+
+			<p id="path"></p>
 			
 		</section>
 	</main>
 
 
 </header>
+
+<script src="/js/script.js"></script>
 
 </body>
 </html>
