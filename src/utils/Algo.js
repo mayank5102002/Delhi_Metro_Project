@@ -4,7 +4,8 @@
 //This is Djikstra algorithm to get the correct route from source node to destination node for Delhi Metro
 
 const metro_data = require('../../public/data/Metro_data')
-const stations = metro_data.stations
+const numToStations = metro_data.numToStations
+const stationsToNum = metro_data.stationsToNum
 const graph = metro_data.graph
 const interchangeStation = metro_data.interchangeStation
 
@@ -46,14 +47,14 @@ function djikstra(src, dest, distance, parent) {
 function printPath(src, dest, distance, parent) {
   var res = "";
   res =
-    "\tRoute between " + stations[dest] + " and " + stations[src] + " is :\n\t";
+    "\tRoute between " + numToStations[dest] + " and " + numToStations[src] + " is :\n\t";
   var p = dest;
   while (parent[p] != -1) {
-    res += stations[p] + " -> ";
+    res += numToStations[p] + " -> ";
     p = parent[p];
   }
 
-  res += stations[p] + "\n";
+  res += numToStations[p] + "\n";
 
   res += "\n\tTotal time taken(in mins) would be " + distance[dest] + " mins.";
   res += "\n\n";
@@ -61,9 +62,32 @@ function printPath(src, dest, distance, parent) {
   return res;
 }
 
+function getPath(src, dest, distance, parent){
+  var path = {};
+
+  path.timeTaken = distance[dest]
+
+  path.stationsInOrder = []
+
+  var p = dest;
+  while (parent[p] != -1) {
+    path.stationsInOrder.push(numToStations[p])
+    p = parent[p];
+  }  
+
+  path.stationsInOrder.push(numToStations[p])
+
+  path.totalStations = path.stationsInOrder.length
+
+  return path
+}
+
 //Drive code
-function driverCode(src, dest) {
+function driverCode(source, destination) {
   var n = 19;
+
+  var src = stationsToNum[source]
+  var dest = stationsToNum[destination]
 
   //Check if the source node is an interchange station
   // If it is, then changing it's data so as to make it as a common station for all the sub lines
@@ -93,8 +117,7 @@ function driverCode(src, dest) {
   djikstra(dest, src, distance, parent);
 
   //Printing path and returning it
-  var res = "";
-  res = printPath(dest, src, distance, parent);
+  var res = getPath(dest, src, distance, parent);
 
   // Undoing the changes made to the data for the source node
   if (interchangeStation[src]) {
@@ -109,18 +132,4 @@ function driverCode(src, dest) {
   return res;
 }
 
-function main() {
-
-  //Declaring the source and destination for the path to find
-  var src = 1, dest = 10;
-
-  //Calling the driver code for the djikstra
-  var path = driverCode(src, dest);
-
-  //Printing out the route
-  // console.log(path);
-
-  return path;
-}
-
-module.exports = {main, driverCode}
+module.exports = {driverCode}

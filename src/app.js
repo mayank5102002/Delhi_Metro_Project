@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
 const algo = require('./utils/Algo.js')
+const validator = require('./utils/stationValidator.js')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -30,22 +31,34 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/path', (req, res) => {
-    if(!req.query.source || !req.query.destination){
-        var path = algo.main()
+    res.setHeader('Content-Type', 'application/json');
 
-        return res.send({
-            path
+    if (!req.query.source || !req.query.destination) {
+        return res.json({
+            error: 101,
+            message: "Invalid Credentials"
         })
     }
 
     const source = req.query.source
     const destination = req.query.destination
 
-    var path = algo.driverCode(source, destination)
+    if (validator(source, destination)) {
 
-    return res.send({
-        path
-    })
+        var path = algo.driverCode(source, destination)
+
+        return res.json({
+            timeTaken : path.timeTaken,
+            totalStations : path.totalStations,
+            stations : path.stationsInOrder
+        })
+
+    } else {
+        return res.json({
+            error: 101,
+            message: "Invalid Credentials"
+        })
+    }
 })
 
 app.listen(port, () => {

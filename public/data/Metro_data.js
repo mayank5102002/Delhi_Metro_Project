@@ -1,31 +1,43 @@
 
 
 //Data For Delhi Metro Rail Corporation
-
-const stations = {};
+const numToStations = {};
+const stationsToNum = {};
 const graph = {};
 const interchangeStation = {};
 
 //Stations with their respective numbering
-stations[1] = "Raj Bagh";
-stations[2] = "Kashmere Gate - Red Line";
-stations[3] = "Kashmere Gate - Yellow Line";
-stations[4] = "Kashmere Gate - Violet Line";
-stations[5] = "New Delhi";
-stations[6] = "Lal Quila";
-stations[7] = "Central Secretariat - Yellow Line";
-stations[8] = "Central Secretariat - Violet Line";
-stations[9] = "INA";
-stations[10] = "Nehru Place";
-stations[11] = "Hauz Khas - Yellow Line";
-stations[12] = "Hauz Khas - Magenta Line";
-stations[13] = "Kalkaji Mandir - Violet Line";
-stations[14] = "Kalkaji Mandir - Magenta Line";
-stations[15] = "Greater Kailash";
-stations[16] = "Kashmere Gate";
-stations[17] = "Central Secretariat";
-stations[18] = "Hauz Khas";
-stations[19] = "Kalkaji Mandir";
+numToStations[1] = "Raj Bagh";
+numToStations[2] = "Kashmere Gate - Red Line";
+numToStations[3] = "Kashmere Gate - Yellow Line";
+numToStations[4] = "Kashmere Gate - Violet Line";
+numToStations[5] = "New Delhi";
+numToStations[6] = "Lal Quila";
+numToStations[7] = "Central Secretariat - Yellow Line";
+numToStations[8] = "Central Secretariat - Violet Line";
+numToStations[9] = "INA";
+numToStations[10] = "Nehru Place";
+numToStations[11] = "Hauz Khas - Yellow Line";
+numToStations[12] = "Hauz Khas - Magenta Line";
+numToStations[13] = "Kalkaji Mandir - Violet Line";
+numToStations[14] = "Kalkaji Mandir - Magenta Line";
+numToStations[15] = "Greater Kailash";
+numToStations[16] = "Kashmere Gate";
+numToStations[17] = "Central Secretariat";
+numToStations[18] = "Hauz Khas";
+numToStations[19] = "Kalkaji Mandir";
+
+//Stations names mapped to their numbers
+stationsToNum['KASHMERE GATE'] = 16
+stationsToNum['NEHRU PLACE'] = 10
+stationsToNum['KALKAJI MANDIR'] = 19
+stationsToNum['RAJ BAGH'] = 1
+
+//Declaring if the station is an interchange station or not
+interchangeStation[19] = true;
+interchangeStation[16] = true;
+interchangeStation[17] = true;
+interchangeStation[18] = true;
 
 //Graph of Delhi Metro
 graph[1] = [[2, 20]];
@@ -108,14 +120,9 @@ graph[19] = [
   [14, 0],
 ];
 
-//Declaring if the station is an interchange station or not
-interchangeStation[19] = true;
-interchangeStation[16] = true;
-interchangeStation[17] = true;
-interchangeStation[18] = true;
-
 module.exports = {
-  stations,
+  numToStations,
+  stationsToNum,
   graph,
   interchangeStation
 }

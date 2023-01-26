@@ -3,12 +3,6 @@ const source2 = document.getElementById('source2')
 const button = document.getElementById('routeButton')
 const path = document.getElementById('path')
 
-const stations = {}
-stations['KASHMERE GATE'] = 16
-stations['NEHRU PLACE'] = 10
-stations['KALKAJI MANDIR'] = 19
-stations['RAJ BAGH'] = 1
-
 button.addEventListener('click', (e) => {
     e.preventDefault()
 
@@ -17,14 +11,13 @@ button.addEventListener('click', (e) => {
 
     if(source != destination){
 
-        const src = stations[source]
-        const des = stations[destination]
-
-        const url = "/path?source=" + src + "&destination=" + des
+        const url = "/path?source=" + source + "&destination=" + destination
 
         fetch(url).then((result) => {
             result.json().then((data) => {
-                path.textContent = data.path
+
+                path.textContent = "Total Time taken : " + data.timeTaken
+                
             })
         })
     }
