@@ -48,6 +48,7 @@ app.get('/path', (req, res) => {
         var path = algo.driverCode(source, destination)
 
         return res.json({
+            status : "Successfull",
             timeTaken : path.timeTaken,
             totalStations : path.totalStations,
             stations : path.stationsInOrder
