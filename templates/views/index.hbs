@@ -1,58 +1,133 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Delhi Metro Route</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
 
-<header>
-	
-<nav>
-	<div class="logo"> <h1 style="font-size: 20px;"> DELHI METRO ROUTE </h1> </div>
-	<div class="menu">
-		<a href="#" style="font-size:large">Home</a>
-		<a href="/about">About</a>
-		
-		<a href="#">api</a>
-	</div>
-</nav>
+	<header class="wrapper">
 
-	<main>
-		<section>
-			<h3>METRO ROUTE NAVIGATOR</h3>
-			<h1>FIND YOUR ROUTE <span class="change_content"> </span> <span style="margin-top: -10px;"> | </span> </h1>
-			
-			<input href="#" class="source" type=text list="stations1" name="myStation" placeholder="SELECT SOURCE" id="source1"></input>
-			<datalist id="stations1" class="btnone">
-			<option value="KASHMERE GATE"></option>
-			<option value="NEHRU PLACE"></option>
-			<option value="KALKAJI MANDIR"></option>
-			<option value="RAJ BAGH"></option>
-			</datalist>
+		<nav>
+			<div class="logo">
+				<h1 style="font-size: 20px;"> DELHI METRO ROUTE </h1>
+			</div>
+			<div class="menu">
+				<a href="#" style="font-size:large">Home</a>
+				<a href="/about">About</a>
 
-			<input href="#" class="dest" type=text list="stations2" name="myStation" placeholder="SELECT DESTINATION" id="source2"></input>
-			<datalist id="stations2" class="btnone">
-			<option value="KASHMERE GATE"></option>
-			<option value="NEHRU PLACE"></option>
-			<option value="KALKAJI MANDIR"></option>
-			<option value="RAJ BAGH"></option>
-			</datalist>
-			
+				<a href="#">api</a>
+			</div>
+		</nav>
 
-			<a href="#" class="btntwo" id="routeButton">FIND ROUTE</a>
+		<main>
+			<section>
+				<h3>METRO ROUTE NAVIGATOR</h3>
+				<div class="cont">
+					<div class="heading">FIND YOUR ROUTE
+					{{!-- <span class="change_content"> </span>
+				<span style="margin-top: -10px;"> | </span> --}}
+					<span class="role"> </span>
+					 </div>
+				</div>
 
-			<p id="path"></p>
-			
-		</section>
-	</main>
+				<input href="#" class="source" type=text list="stations1" name="myStation" placeholder="SELECT SOURCE"
+					id="source1" oninput="updateText(this)"></input>
+				<datalist id="stations1" class="btnone">
+					<option value="KASHMERE GATE"></option>
+					<option value="NEHRU PLACE"></option>
+					<option value="KALKAJI MANDIR"></option>
+					<option value="RAJ BAGH"></option>
+				</datalist>
+
+				<input href="#" class="dest" type=text list="stations2" name="myStation"
+					placeholder="SELECT DESTINATION" id="source2" oninput="updateText(this)"></input>
+				<datalist id="stations2" class="btnone">
+					<option value="KASHMERE GATE"></option>
+					<option value="NEHRU PLACE"></option>
+					<option value="KALKAJI MANDIR"></option>
+					<option value="RAJ BAGH"></option>
+				</datalist>
+
+{{!-- 
+				<button class="btntwo" id="routeButton"
+					onclick="show(); window.location.href = '#content';">FIND ROUTE</button> --}}
+				<button class="btn-pink" href="#content" onclick="show() ; window.location.href = '#content';" id="routeButton">FIND ROUTE</button>
+
+				<p id="path"></p>
+
+			</section>
+		</main>
 
 
-</header>
 
-<script src="/js/script.js"></script>
+	</header>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	<script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+	<script>
 
+// Get the input elements
+var s1 = document.getElementById("source1");
+var s2 = document.getElementById("source2");
+
+// Create Typed object
+var typeData = new Typed(".role", {
+    strings: [
+        "Nehru Place",
+        "Raj Bagh",
+        "Kalkaji",
+        "Hauz Khas",
+    ],
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 80,
+    backDelay: 1000,
+});
+
+// Add event listeners to the input elements
+s1.addEventListener("input", function() {
+    handleInputChange();
+});
+s2.addEventListener("input", function() {
+    handleInputChange();
+});
+function handleInputChange() {
+    if (s2.value !== "" ) {
+        document.querySelector(".role").textContent = s2.value;
+        typeData.stop();
+    }
+    else if (s1.value !== "") {
+        document.querySelector(".role").textContent = s1.value;
+        typeData.stop();
+    }
+    else {
+        typeData.start();
+    }
+}
+/*function handleInputChange() {
+    if (source1.value !== "" && source2.value !== "") {
+        typeData.start();
+    }
+    else if (source1.value !== "" ) {
+        document.querySelector(".role").textContent = source1.value;
+        typeData.stop();
+    }
+    else if (source2.value !== "") {
+        document.querySelector(".role").textContent = source2.value;
+        typeData.stop();
+    }
+}*/
+
+
+
+	</script>
+
+	<script src="/js/script.js"></script>
 </body>
+
 </html>

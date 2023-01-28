@@ -22,3 +22,28 @@ button.addEventListener('click', (e) => {
         })
     }
 })
+
+function show() {
+    var s1 = document.getElementById("source1").value;
+    var s2 = document.getElementById("source2").value;
+
+    if (!s1 && !s2) {
+        alert("Please enter Source and Destination values");
+        document.getElementById('content').style.display = "none";
+    }else if(s1 != "" && s2 != "" && s1 !== s2){
+        document.getElementById('content').style.display = "block";
+    }else if(s1 === s2) {
+        alert("Values are same. Please re-enter different values.");
+        document.getElementById('content').style.display = "none";
+    } else if (s1 == "" && s2 != "") {
+        alert("Please enter Source value");
+        document.getElementById('content').style.display = "none";
+    }else if (s2 == "" ) {
+        alert("Please enter Destination value");
+        document.getElementById('content').style.display = "none";
+    }else{
+        document.getElementById('content').style.display = "none";
+    }
+    
+    
+}
