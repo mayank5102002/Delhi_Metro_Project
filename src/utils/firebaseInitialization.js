@@ -10,11 +10,38 @@ admin.initializeApp({
 });
 
 //Getting data from firebase
-function downloadData() {
-  const ref2 = admin.database().ref("/stationToNums");
-  ref2.once("value", (snapshot) => {
-    console.log(snapshot.val());
+function getData() {
+  const ref = admin.database().ref("/stationToNums");
+  var data;
+  ref.once("value", (snapshot) => {
+    data = snapshot.val();
   });
 }
 
-module.exports = downloadData
+function addStationToNumsData(stations, nums) {
+  const ref = admin.database().ref("/stationToNums");
+  var data;
+  ref.once("value", (snapshot) => {
+    data = snapshot.val();
+    computeData(stations, nums, ref, data);
+  });
+}
+
+function computeData(key, value, ref, data) {
+  var n = key.length
+
+  for (let i = 0; i < n; i++) {
+    data[key[i]] = value[i]
+  }
+
+  ref.set(data)
+}
+
+addStationToNumsData(
+  ["KASHMERE GATE", "KALKAJI MANDIR"],
+  [2, 3]
+)
+
+module.exports = {
+  addStationToNumsData
+}
