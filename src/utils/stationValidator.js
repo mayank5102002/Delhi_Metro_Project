@@ -1,4 +1,4 @@
-const metro_data = require('../../public/data/Metro_data')
+const metro_data = require('../data/Metro_data')
 
 const stationsToNum = metro_data.stationsToNum
 
