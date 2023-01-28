@@ -23,31 +23,43 @@ hbs.registerPartials(partialspath)
 //Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
+//Declaring various paths which could be taken and giving appropriate responses to those
+
+//Path for main page
 app.get('', (req, res) => {
     res.render('index')
 })
 
+//Path for about page
 app.get('/about', (req, res) => {
     res.render('about')
 })
 
+//Path for path page API to get path for the route
 app.get('/path', (req, res) => {
+    //Setting content-type as json for api call
     res.setHeader('Content-Type', 'application/json');
 
+    //Checking if source and destination are present in the attributes provided
     if (!req.query.source || !req.query.destination) {
+        //Returning invalid credentials response
         return res.json({
             error: 101,
             message: "Invalid Credentials"
         })
     }
 
+    //Getting the source and destination
     const source = req.query.source
     const destination = req.query.destination
 
+    //Checking if the provided attirbutes are correct
     if (validator(source, destination)) {
 
+        //Getting path for provided data
         var path = algo.driverCode(source, destination)
 
+        //Returning successfull data
         return res.json({
             status : "Successfull",
             timeTaken : path.timeTaken,
@@ -56,6 +68,7 @@ app.get('/path', (req, res) => {
         })
 
     } else {
+        //Returning invalid credentials when provided attributes are not correct
         return res.json({
             error: 101,
             message: "Invalid Credentials"
@@ -63,6 +76,7 @@ app.get('/path', (req, res) => {
     }
 })
 
+//Making the site listen on the provided port
 app.listen(port, () => {
     console.log('Server is up and running on port ' + port)
 })

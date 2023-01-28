@@ -62,13 +62,19 @@ function printPath(src, dest, distance, parent) {
   return res;
 }
 
+//Function to get path for source and destination
 function getPath(src, dest, distance, parent){
+
+  //Initilising path object
   var path = {};
 
+  //Putting variables for path object
   path.timeTaken = distance[dest]
 
   path.stationsInOrder = []
 
+
+  //Starting a loop to get the path and put in path object
   var p = dest;
   while (parent[p] != -1) {
     path.stationsInOrder.push(numToStations[p])
@@ -79,6 +85,7 @@ function getPath(src, dest, distance, parent){
 
   path.totalStations = path.stationsInOrder.length
 
+  //returning path object
   return path
 }
 
