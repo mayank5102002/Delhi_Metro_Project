@@ -3,7 +3,7 @@
 
 //This is Djikstra algorithm to get the correct route from source node to destination node for Delhi Metro
 
-const metro_data = require('../../public/data/Metro_data')
+const metro_data = require('../data/Metro_data')
 const numToStations = metro_data.numToStations
 const stationsToNum = metro_data.stationsToNum
 const graph = metro_data.graph
@@ -62,13 +62,19 @@ function printPath(src, dest, distance, parent) {
   return res;
 }
 
+//Function to get path for source and destination
 function getPath(src, dest, distance, parent){
+
+  //Initilising path object
   var path = {};
 
+  //Putting variables for path object
   path.timeTaken = distance[dest]
 
   path.stationsInOrder = []
 
+
+  //Starting a loop to get the path and put in path object
   var p = dest;
   while (parent[p] != -1) {
     path.stationsInOrder.push(numToStations[p])
@@ -79,6 +85,7 @@ function getPath(src, dest, distance, parent){
 
   path.totalStations = path.stationsInOrder.length
 
+  //returning path object
   return path
 }
 

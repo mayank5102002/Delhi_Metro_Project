@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "delhi-metro-project-f08e5",
+  "private_key_id": "0d5e1d6d9162138075e74611252acea883d3ae96",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC0Ljl87UMTr1dd\nT6pk2ZmdoIy7TQxhkPxU5qAg53uFAcAGAszvE1vlRr9ip+3BWtSU2SSwq0R4Kdzi\nvR8r0/ZsaYf1FccSz9ARgCu9L+e0ywjIn24bF2M2New5gJY4fBeBY/xE52M788e5\nw/zciSeR74tob4A9tXIuu5HrYnLtG6LhW8KYs7yOR2iID7aipaWcFSMX56y1N6WQ\ndXbmB32cPLrlIqilGf+eMqzS1eQ8xFvdIl/pZipvWpn2V89TlT2mEK86UhuoQNUR\njdyfcMMmQ9LVt6q3vpbsg9+RuGiVfzojLlv4zsvnbvt4Tjm87KMAkSVi2XbfaxK2\nTVfA7H/VAgMBAAECggEAV16uy7A1PX9hysKNqpeFkNTASTakUU8/vF+UuD/nOmjN\n11xWSXvGrNfwiANMG91ShdcBnpV9/xK1pFD2o4cF0C4gGiz0OmAA0eunyfZH0fg+\nCyKb/pEJr8jYAk4jCcLKlxiHxFW7Xd/pMmAh5kKvqGlS3VJsCgBJHPYhXNWBSw2w\niYVX8SuGubMgbvoLAgW13FDWdyac2Q7JCytX0xocMN7oHcYKy8tCqmX4T4QqcUsB\n6SPO4oqEAtUTAzlXss9Ii/rK+igiIkredk3jEBrMzC47dwprTutXFcN1T2kPptmi\nrC7JTjr+sjuTWxi1Lb3mI500xnUhGprDFF0I52m7pQKBgQD04HDE0b7z2emnXZMR\ncs6P6mFvy+PEtEC4/j263+0UBq3P8fUruiFCowBfztFDH0kAZNwgWVIVITL178q0\nNCj67cWXmvUPymP3oZPFqgjcUkk2Me4fnn6nhz3jeUdDVaM5m7wvYfIT9Vr1/anJ\ntqc9YYU2w7xytarRFzH13Gj0JwKBgQC8XXZHDh2qzNtGwHBN3P+QtBa/BJn3dQZn\n/e0t+7pg/S9m+A7hSMl/C1GZbXJGYYAA9q15FdS6sVXK7pET99ZwZrowGI9BOUcv\naw9m5Q3VGQYHkW3ujw7kdIjQTl0Hs7zEIzCfHbopE72SV7A8pFy+PsdsgnfhGVve\nm9PQYU59owKBgE8PU3lIGrWSKmzdukjM30H5syGsG0p7w9W2R+nYuCtaCK31eWl3\nu5tPEyTbmhZouGIHLkbHb8fgoxpiI/jQSlbRg5Tx86L4fhQKN7J+tkOj0X1M24ub\n2VpvQJz7n/VuZbeIv1Yw8j5dXdPD5Rh5/z7DCIZo5aPHYXIGYhv14HDLAoGAEIAr\ndUwCQ00QxGDlNZzvclCkUXVou2mv9voihc2wZQCo319Jhmim5g8qxcL1qL6vxOXX\nCm1kJjqUpmNBqDskuNH263GrUu5ekwPQ5JWaIZnAkncl5yj3CAJBXeYPdjZDifb/\nMmEbRq/pAmHWGWnYif3b4GCJedmL17NU2cM8afsCgYEAjp2fRLVOLk0TZ7YMJeJ1\nId0zVUfqHRUChsANkqfYsEKI0D2w2crrpZn7mlYd8edJWcBK9NTTKsFA39aEA/Dz\n5GVf/y7MI8A0SQgw42SfegD1P+LjpbN0dSmY/HssHjtQiY2dZzieQzGpNuYq2mZX\nhqrknh8mgtdp8MfkoAgZIS0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-7fqvi@delhi-metro-project-f08e5.iam.gserviceaccount.com",
+  "client_id": "115873326566591736406",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-7fqvi%40delhi-metro-project-f08e5.iam.gserviceaccount.com"
+}
