@@ -3,7 +3,7 @@
 
 //This is Djikstra algorithm to get the correct route from source node to destination node for Delhi Metro
 
-const metro_data = require('../../public/data/Metro_data')
+const metro_data = require('../data/Metro_data')
 const numToStations = metro_data.numToStations
 const stationsToNum = metro_data.stationsToNum
 const graph = metro_data.graph
