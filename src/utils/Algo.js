@@ -63,13 +63,17 @@ function printPath(src, dest, distance, parent) {
 }
 
 //Function to get path for source and destination
-function getPath(src, dest, distance, parent){
+function getPath(src, dest, distance, parent) {
 
   //Initilising path object
   var path = {};
 
   //Putting variables for path object
-  path.timeTaken = distance[dest]
+  if (distance[dest] == null) {
+    path.timeTaken = "null"
+  } else {
+    path.timeTaken = distance[dest]
+  }
 
   path.stationsInOrder = []
 
@@ -91,7 +95,7 @@ function getPath(src, dest, distance, parent){
 
 //Drive code
 function driverCode(source, destination) {
-  var n = 19;
+  var n = metro_data.noOfStations;
 
   var src = stationsToNum[source]
   var dest = stationsToNum[destination]
@@ -116,17 +120,17 @@ function driverCode(source, destination) {
     }
   }
 
-  //Declaring distance and parent Array for the algorithm
+  // //Declaring distance and parent Array for the algorithm
   var distance = Array(n + 1).fill(Number.MAX_SAFE_INTEGER);
   var parent = Array(n + 1).fill(0);
 
-  //Calling Djikstra for source and destination
+  // //Calling Djikstra for source and destination
   djikstra(dest, src, distance, parent);
 
-  //Printing path and returning it
+  // //Printing path and returning it
   var res = getPath(dest, src, distance, parent);
 
-  // Undoing the changes made to the data for the source node
+  // // Undoing the changes made to the data for the source node
   if (interchangeStation[src]) {
 
     //Removing the source node from the data after use
@@ -136,7 +140,7 @@ function driverCode(source, destination) {
     }
   }
 
-  return res;
+  return res
 }
 
-module.exports = {driverCode}
+module.exports = { driverCode }
