@@ -37,11 +37,14 @@ function computeData(key, value, ref, data) {
   ref.set(data)
 }
 
-addStationToNumsData(
-  ["KASHMERE GATE", "KALKAJI MANDIR"],
-  [2, 3]
-)
+function add(){
+  addStationToNumsData(
+    ["KASHMERE GATE", "KALKAJI MANDIR"],
+    [2, 3]
+  )
+}
 
 module.exports = {
-  addStationToNumsData
+  addStationToNumsData,
+  add
 }
