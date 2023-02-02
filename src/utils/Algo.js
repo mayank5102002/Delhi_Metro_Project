@@ -47,14 +47,14 @@ function djikstra(src, dest, distance, parent) {
 function printPath(src, dest, distance, parent) {
   var res = "";
   res =
-    "\tRoute between " + numToStations[dest] + " and " + numToStations[src] + " is :\n\t";
+    "\tRoute between " + numToStations[dest][0] + " and " + numToStations[src][0] + " is :\n\t";
   var p = dest;
   while (parent[p] != -1) {
-    res += numToStations[p] + " -> ";
+    res += numToStations[p][0] + " -> ";
     p = parent[p];
   }
 
-  res += numToStations[p] + "\n";
+  res += numToStations[p][0] + "\n";
 
   res += "\n\tTotal time taken(in mins) would be " + distance[dest] + " mins.";
   res += "\n\n";
@@ -88,6 +88,8 @@ function getPath(src, dest, distance, parent) {
   path.stationsInOrder.push(numToStations[p])
 
   path.totalStations = path.stationsInOrder.length
+
+  console.log(path);
 
   //returning path object
   return path
