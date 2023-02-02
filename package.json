@@ -15,5 +15,13 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayank5102002/Delhi_Metro_Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mayank5102002/Delhi_Metro_Project/issues"
+  },
+  "homepage": "https://github.com/mayank5102002/Delhi_Metro_Project#readme",
   "description": ""
 }
