@@ -7,6 +7,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<script src="https://cdn.tailwindcss.com"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	
 </head>
 
 <body>
@@ -38,25 +41,10 @@
 
 				<input href="#" class="source" type=text list="stations1" name="myStation" placeholder="SELECT SOURCE"
 					id="source1" oninput="updateText(this)"></input>
-				<datalist id="stations1" class="btnone">
-					<option value="Kashmere Gate"></option>
-					<option value="Nehru Place"></option>
-					<option value="Kalkaji Mandir"></option>
-					<option value="Raj Bagh"></option>
-				</datalist>
 
 				<input href="#" class="dest" type=text list="stations2" name="myStation"
 					placeholder="SELECT DESTINATION" id="source2" oninput="updateText(this)"></input>
-				<datalist id="stations2" class="btnone">
-					<option value="Kashmere Gate"></option>
-					<option value="Nehru Place"></option>
-					<option value="Kalkaji Mandir"></option>
-					<option value="Raj Bagh"></option>
-				</datalist>
 
-				{{!--
-				<button class="btntwo" id="routeButton" onclick="show(); window.location.href = '#content';">FIND
-					ROUTE</button> --}}
 				<button class="btn-pink" href="#content" onclick="show() ; window.location.href = '#content';"
 					id="routeButton">FIND ROUTE</button>
 
@@ -71,66 +59,7 @@
 
 
 	</header>
-	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-	<script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
-	<script>
-
-		// Get the input elements
-		var s1 = document.getElementById("source1");
-		var s2 = document.getElementById("source2");
-
-		// Create Typed object
-		var typeData = new Typed(".role", {
-			strings: [
-				"Nehru Place",
-				"Raj Bagh",
-				"Kalkaji",
-				"Hauz Khas",
-			],
-			loop: true,
-			typeSpeed: 100,
-			backSpeed: 80,
-			backDelay: 1000,
-		});
-
-		// Add event listeners to the input elements
-		s1.addEventListener("input", function () {
-			handleInputChange();
-		});
-		s2.addEventListener("input", function () {
-			handleInputChange();
-		});
-		function handleInputChange() {
-			if (s2.value !== "") {
-				document.querySelector(".role").textContent = s2.value;
-				typeData.stop();
-			}
-			else if (s1.value !== "") {
-				document.querySelector(".role").textContent = s1.value;
-				typeData.stop();
-			}
-			else {
-				typeData.start();
-			}
-		}
-/*function handleInputChange() {
-															if (source1.value !== "" && source2.value !== "") {
-																typeData.start();
-															}
-															else if (source1.value !== "" ) {
-																document.querySelector(".role").textContent = source1.value;
-																typeData.stop();
-															}
-															else if (source2.value !== "") {
-																document.querySelector(".role").textContent = source2.value;
-																typeData.stop();
-															}
-														}*/
-
-
-
-	</script>
-
+	<script src="/js/FrontendEffect.js"></script>
 	<script src="/js/script.js"></script>
 </body>
 
