@@ -4,13 +4,23 @@ const button = document.getElementById('routeButton')
 const path = document.getElementById('path')
 
 var completelist = document.getElementById("thelist");
+var completelistnumber = document.getElementById("thelistnumber");
+
 
 button.addEventListener('click', (e) => {
     e.preventDefault()
 
     const source = source1.value
     const destination = source2.value
+    
+    if(!source || !destination){
+        alert("Input Both Source and Destination")
+    }else{
+        getPath();
+    }
+})
 
+function getPath() {
     if (source != destination) {
 
         const url = "/path?source=" + source + "&destination=" + destination
@@ -18,7 +28,12 @@ button.addEventListener('click', (e) => {
         fetch(url).then((result) => {
             result.json().then((data) => {
 
+                if(data.error === 101){
+                    alert("Enter Correct Source and Destination")
+                    return;
+                }
                 completelist.innerHTML = ""
+                completelistnumber.innerHTML = ""
 
                 path.textContent = "Total Time taken : " + data.timeTaken
 
@@ -27,37 +42,31 @@ button.addEventListener('click', (e) => {
                 var n = stations.length
 
                 for (let i = 0; i < n; i++) {
-                    completelist.innerHTML += "<div class=\"feed-item flex space-x-4 max-w-xl justify-center border-b py-2 mx-auto px-2\">" +
-                    "<div class=\"flex flex-col w-full\">" +
-                        "<div class=\"flex flex-row space-x-4 items-center justify-between\">" +
-                            "<h1 class=\"font-semibold text-white-800\">" + stations[i] + "</h1>" +
-                        "</div>" +
-                    "</div>" +
-                "</div>";
+                    completelistnumber.innerHTML += "<div>" + (i + 1) + "</div>";
+                    completelist.innerHTML += "<div class='font-semibold text-white-800'>" + stations[i] + "</div>";
                 }
 
             })
         })
     }
-})
+}
 
 function show() {
     var s1 = document.getElementById("source1").value;
     var s2 = document.getElementById("source2").value;
 
     if (!s1 && !s2) {
-        alert("Please enter Source and Destination values");
-        document.getElementById('content').style.display = "none";
+        document.getElementByClassName('content').style.display = "none";
     } else if (s1 != "" && s2 != "" && s1 !== s2) {
         document.getElementById('content').style.display = "block";
     } else if (s1 === s2) {
-        alert("Values are same. Please re-enter different values.");
+       
         document.getElementById('content').style.display = "none";
     } else if (s1 == "" && s2 != "") {
-        alert("Please enter Source value");
+        
         document.getElementById('content').style.display = "none";
     } else if (s2 == "") {
-        alert("Please enter Destination value");
+
         document.getElementById('content').style.display = "none";
     } else {
         document.getElementById('content').style.display = "none";
@@ -65,3 +74,11 @@ function show() {
 
 
 }
+for (let i = 0; i < n; i++) {
+
+    completelistnumber.innerHTML += "<div>" + (i + 1) + "</div>";
+    completelist.innerHTML += "<div class='font-semibold text-white-800'>" + stations[i] + "</div>";
+
+}
+
+
