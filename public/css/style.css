@@ -7,19 +7,20 @@
   font-family: "Josefin Sans", sans-serif;
   scroll-behavior: smooth;
 }
-
-
 .wrapper {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
-  url("../img/metrobg.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
 }
 
+header {
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+    url("../img/metrobg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 nav {
   width: 100%;
@@ -63,9 +64,7 @@ main {
   align-items: center;
   text-align: center;
   color: white;
-  
 }
-
 
 section h3 {
   font-size: 35px;
@@ -86,11 +85,9 @@ section h3 {
   /* after small values data can be min width hta do */
   position: relative;
   left: 4.5rem;
- }
+}
 
-
-.role{
- 
+.role {
   color: #00b894;
 }
 
@@ -114,25 +111,20 @@ section a {
 }
 
 .source {
-
   width: 15rem;
   padding: 16px 20px;
   border: none;
   border-radius: 4px;
   color: black;
-
 }
 
 .dest {
-
   width: 15rem;
   padding: 16px 20px;
   border: none;
   border-radius: 4px;
   color: black;
-
 }
-
 
 /* .btnone {
   background: #00b894;
@@ -199,17 +191,16 @@ section a {
   margin-right: 250px;
   background-color: ghostwhite;
   opacity: 75%;
-
 }
 
 .name {
   text-align: center;
 
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .details {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .img {
@@ -224,13 +215,6 @@ section a {
   display: flex;
   align-items: center;
 }
-
-
-
-
-
-
-
 
 .wrapper .button {
   display: inline-block;
@@ -262,7 +246,7 @@ section a {
 }
 
 .wrapper .button:nth-child(1):hover .icon {
-  background: #4267B2;
+  background: #4267b2;
 }
 
 .wrapper .button .icon i {
@@ -284,7 +268,7 @@ section a {
 }
 
 .wrapper .button:nth-child(1) span {
-  color: #4267B2;
+  color: #4267b2;
 }
 
 .btn-pink {
@@ -295,17 +279,68 @@ section a {
   box-shadow: 5px 5px 7px 0px #0000003f;
   border: 0;
 
-  background: linear-gradient(to left, #00b894 50%,#4267B2 50%);
+  background: linear-gradient(to left, #00b894 50%, #4267b2 50%);
 
   background-size: 200% 100%;
 
   background-position: right;
 
   transition: all 0.8s;
-
 }
 
-
 .btn-pink:hover {
- background-position: left;
+  background-position: left;
+}
+
+/* Display Section */
+#content {
+  display: none;
+}
+
+.display-metro-stations {
+  background-color: rgb(113, 113, 113);
+}
+
+.thelist {
+  margin: 0 auto;
+}
+
+.main-container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.line-container {
+  display: inline-flex;
+  /* justify-content: center;
+  align-items: center; */
+  gap: 0;
+}
+
+.theline-container {
+  /* w-5 h-15 bg-sky-500 z-0 */
+  width: 2rem;
+  height: 10rem;
+  background-color: violet;
+  z-index: 0;
+}
+.thelist-number {
+  text-align: center;
+  margin: 4rem 0;
+  /*padding: 1rem; */
+}
+
+#path {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#theline-container-3 {
+  background-color: magenta;
+}
+
+#theline-container-4 {
+  background-color: magenta;
 }

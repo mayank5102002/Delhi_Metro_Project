@@ -3,62 +3,69 @@
 
 <head>
 	<title>Delhi Metro Route</title>
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-	<script src="https://cdn.tailwindcss.com"></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-	
 </head>
 
 <body>
 
-	<header class="wrapper">
+	<section class="wrapper">
 
-		<nav>
-			<div class="logo">
-				<h1 style="font-size: 20px;"> DELHI METRO ROUTE </h1>
-			</div>
-			<div class="menu">
-				<a href="#" style="font-size:large">Home</a>
-				<a href="/about">About</a>
+		<header>
 
-				<a href="#">api</a>
-			</div>
-		</nav>
+			<nav>
+				<div class="logo">
+					<h1 style="font-size: 20px;"> DELHI METRO ROUTE </h1>
+				</div>
+				<div class="menu">
+					<a href="#" style="font-size:large">Home</a>
+					<a href="/about">About</a>
 
-		<main>
-			<section>
-				<h3>METRO ROUTE NAVIGATOR</h3>
-				<div class="cont">
-					<div class="heading">FIND YOUR ROUTE
-						{{!-- <span class="change_content"> </span>
-						<span style="margin-top: -10px;"> | </span> --}}
-						<span class="role"> </span>
+					<a href="#">api</a>
+				</div>
+			</nav>
+
+			<main>
+				<section>
+					<h3>METRO ROUTE NAVIGATOR</h3>
+					<div class="cont">
+						<div class="heading">FIND YOUR ROUTE
+							{{!-- <span class="change_content"> </span>
+							<span style="margin-top: -10px;"> | </span> --}}
+							<span class="role"> </span>
+						</div>
 					</div>
-				</div>
 
-				<input href="#" class="source" type=text list="stations1" name="myStation" placeholder="SELECT SOURCE"
-					id="source1" oninput="updateText(this)"></input>
+					<input href="#" class="source" type=text list="stations1" name="myStation"
+						placeholder="SELECT SOURCE" id="source1" oninput="updateText(this)"></input>
 
-				<input href="#" class="dest" type=text list="stations2" name="myStation"
-					placeholder="SELECT DESTINATION" id="source2" oninput="updateText(this)"></input>
+					<input href="#" class="dest" type=text list="stations2" name="myStation"
+						placeholder="SELECT DESTINATION" id="source2" oninput="updateText(this)"></input>
 
-				<button class="btn-pink" href="#content" onclick="show() ; window.location.href = '#content';"
-					id="routeButton">FIND ROUTE</button>
-
-				<p id="path"></p>
-
-				<div id="thelist" class="feeds-container mt-4">
-				</div>
-
-			</section>
-		</main>
+					<button class="btn-pink" href="#content"
+						onclick="getpath(source, destination) ; window.location.href = '#content';"
+						id="routeButton">FIND ROUTE</button>
 
 
 
-	</header>
+				</section>
+			</main>
+		</header>
+
+	</section>
+
+	<section class="display-metro-stations" id="content">
+
+
+		<div id="path"></div>
+		<div id="thelist">
+		</div>
+		
+	</section>
 	<script src="/js/FrontendEffect.js"></script>
 	<script src="/js/script.js"></script>
 </body>
