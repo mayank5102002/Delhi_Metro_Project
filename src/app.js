@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const algo = require('./utils/Algo.js')
 const validator = require('./utils/stationValidator.js')
 const firebaseApp = require("./utils/firebaseInitialization")
+const formatter = require('./utils/StationsFormattor.js')
 
 
 
@@ -61,12 +62,14 @@ app.get('/path', (req, res) => {
         //Getting path for provided data
         var path = algo.driverCode(source, destination)
 
+        var stations = formatter.format(source, destination, path.stationsInOrder)
+
         //Returning successfull data
         return res.json({
             status : "Successfull",
             timeTaken : path.timeTaken,
-            totalStations : path.totalStations,
-            stations : path.stationsInOrder
+            totalStations : stations.length,
+            stations : stations
         })
 
     } else {

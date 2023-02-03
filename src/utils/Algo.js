@@ -89,8 +89,6 @@ function getPath(src, dest, distance, parent) {
 
   path.totalStations = path.stationsInOrder.length
 
-  console.log(path);
-
   //returning path object
   return path
 }
