@@ -4,7 +4,7 @@ const button = document.getElementById('routeButton')
 const path = document.getElementById('path')
 
 var completelist = document.getElementById("thelist");
-var completelistnumber = document.getElementById("thelistnumber");
+// var completelistnumber = document.getElementById("thelistnumber");
 
 
 button.addEventListener('click', (e) => {
@@ -16,11 +16,11 @@ button.addEventListener('click', (e) => {
     if(!source || !destination){
         alert("Input Both Source and Destination")
     }else{
-        getPath();
+        getPath(source, destination);
     }
 })
 
-function getPath() {
+function getPath(source , destination) {
     if (source != destination) {
 
         const url = "/path?source=" + source + "&destination=" + destination
@@ -29,11 +29,15 @@ function getPath() {
             result.json().then((data) => {
 
                 if(data.error === 101){
-                    alert("Enter Correct Source and Destination")
+                    alert("Enter Correct Source and Destination");
+                    document.getElementByClassName('content').style.display = "none";
                     return;
+                }else{
+                    document.getElementById('content').style.display = "block";
                 }
+
                 completelist.innerHTML = ""
-                completelistnumber.innerHTML = ""
+                // completelistnumber.innerHTML = ""
 
                 path.textContent = "Total Time taken : " + data.timeTaken
 
@@ -42,43 +46,65 @@ function getPath() {
                 var n = stations.length
 
                 for (let i = 0; i < n; i++) {
-                    completelistnumber.innerHTML += "<div>" + (i + 1) + "</div>";
-                    completelist.innerHTML += "<div class='font-semibold text-white-800'>" + stations[i] + "</div>";
-                }
-
+                    completelist.innerHTML += "<div class='main-container'>" +
+                      "<div class='line-container'>" +
+                      "<div id='theline-container-" + (i+1) + "' class='theline-container'>" + "<div class='thelist-number'>" + (i + 1) + "</div>" + "</div>" +
+                      "</div>" +
+                      "<div class='font-semibold text-white-800 ml-3'>" + stations[i] + "</div>" +
+                      "</div>";
+                  }
+                  
             })
         })
     }
 }
 
-function show() {
-    var s1 = document.getElementById("source1").value;
-    var s2 = document.getElementById("source2").value;
 
-    if (!s1 && !s2) {
-        document.getElementByClassName('content').style.display = "none";
-    } else if (s1 != "" && s2 != "" && s1 !== s2) {
-        document.getElementById('content').style.display = "block";
-    } else if (s1 === s2) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function show() {
+//     var s1 = document.getElementById("source1").value;
+//     var s2 = document.getElementById("source2").value;
+
+//     if (!s1 && !s2) {
+//         document.getElementByClassName('content').style.display = "none";
+//     } else if (s1 != "" && s2 != "" && s1 !== s2) {
+//         document.getElementById('content').style.display = "block";
+//     } else if (s1 === s2) {
        
-        document.getElementById('content').style.display = "none";
-    } else if (s1 == "" && s2 != "") {
+//         document.getElementById('content').style.display = "none";
+//     } else if (s1 == "" && s2 != "") {
         
-        document.getElementById('content').style.display = "none";
-    } else if (s2 == "") {
+//         document.getElementById('content').style.display = "none";
+//     } else if (s2 == "") {
 
-        document.getElementById('content').style.display = "none";
-    } else {
-        document.getElementById('content').style.display = "none";
-    }
+//         document.getElementById('content').style.display = "none";
+//     } else {
+//         document.getElementById('content').style.display = "none";
+//     }
 
 
-}
-for (let i = 0; i < n; i++) {
+// }
+// for (let i = 0; i < n; i++) {
 
-    completelistnumber.innerHTML += "<div>" + (i + 1) + "</div>";
-    completelist.innerHTML += "<div class='font-semibold text-white-800'>" + stations[i] + "</div>";
+//     completelistnumber.innerHTML += "<div>" + (i + 1) + "</div>";
+//     completelist.innerHTML += "<div class='font-semibold text-white-800'>" + stations[i] + "</div>";
 
-}
+// }
 
 
