@@ -81,6 +81,10 @@ app.get('/path', (req, res) => {
     }
 })
 
+app.get('*', (req, res) => {
+    res.render('404')
+})
+
 //Making the site listen on the provided port
 app.listen(port, () => {
     console.log('Server is up and running on port ' + port)
