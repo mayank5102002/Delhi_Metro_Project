@@ -17,7 +17,7 @@
 .header {
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
-    url("../img/metrobg.jpg");
+    url("../img/metro2blur.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -59,8 +59,8 @@ nav {
   color: white;
 }
 
-a:active {
-  color: red;
+.active {
+  color: #00b894;
 }
 
 /* Main Section */
@@ -191,10 +191,20 @@ a:active {
 .display-metro-stations {
   width: 100%;
   height: auto;
-  background-image: linear-gradient(to right, #11998e, #38ef7d);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+    url("../img/metro2blur.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: repeat-y;
+
+  z-index: 0;
+  /* background-image: linear-gradient(to right, #11998e, #38ef7d); */
+  /* background-color: black; */
 }
 
 #thelist {
+  position: relative;
   margin: 0 auto;
   height: auto;
   /* margin-top: 30rem; */
@@ -208,6 +218,7 @@ a:active {
   align-items: center;
   z-index: 0;
   margin-left: 30rem;
+  z-index: 10;
 }
 
 .line-container {
@@ -260,4 +271,20 @@ a:active {
   padding: 2rem 0;
   text-align: center;
   margin-left: 16rem;
+  z-index: 10;
+}
+
+.swal2-toast {
+  position: absolute !important;
+  top: 0 !important;
+  background-color: rgb(149, 149, 0) !important;
+  width: 700px !important;
+  opacity: 80% !important;
+  margin: 0 1rem !important;
+  color: white !important;
+}
+
+.swal2-toast:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 1px 10px yellow;
 }

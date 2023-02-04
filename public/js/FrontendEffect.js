@@ -302,14 +302,7 @@
       });
 
 
-      const tabs = document.querySelectorAll(".tab a");
-      tabs.forEach(tab =>{
-        tab.addEventListener("click", function(){
-            tabs.forEach(t => t.classList.remove("active"));
-            this.classList.add("active");
-        })
-      });
-
+      
 
 //Effect
 var s1 = document.getElementById("source1");
@@ -379,3 +372,13 @@ ul2.addEventListener("click", function(e) {
     }
   }
 });
+
+
+
+const tabs = document.querySelectorAll(".tab a");
+      tabs.forEach(tab =>{
+        tab.addEventListener("click", function(){
+            tabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+        })
+      });
