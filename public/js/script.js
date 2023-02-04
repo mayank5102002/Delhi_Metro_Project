@@ -1,110 +1,164 @@
-const source1 = document.getElementById('source1')
-const source2 = document.getElementById('source2')
-const button = document.getElementById('routeButton')
-const path = document.getElementById('path')
+const source1 = document.getElementById("source1");
+const source2 = document.getElementById("source2");
+const button = document.getElementById("routeButton");
+const path = document.getElementById("path");
 
 var completelist = document.getElementById("thelist");
-// var completelistnumber = document.getElementById("thelistnumber");
+var section = document.getElementById("content");
 
 
-button.addEventListener('click', (e) => {
-    e.preventDefault()
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+ 
+  const source = source1.value;
+  const destination = source2.value;
 
-    const source = source1.value
-    const destination = source2.value
-    
-    if(!source || !destination){
-        alert("Input Both Source and Destination")
-    }else{
-        getPath(source, destination);
-    }
-})
+  if (!source) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please Enter Destination Value",
+    });
+  } else if (!destination) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please Enter Destination Value",
+    });
+  } else if (source === destination) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please Enter Source and Destination Different",
+    });
+  } else {
+    console.log("Scroll")
+    getPath(source, destination);  
+  }
+});
 
-function getPath(source , destination) {
-    if (source != destination) {
+function getPath(source, destination) {
+  if (source != destination) {
+    const url = "/path?source=" + source + "&destination=" + destination;
 
-        const url = "/path?source=" + source + "&destination=" + destination
+    fetch(url).then((result) => {
+      result.json().then((data) => {
+        if (data.error === 101) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Please Enter Correct Source and Destination",
+          });
+          document.getElementByClassName("content").style.display = "none";
+          return;
+        } else {
+          section.style.display = "block";
+        }
 
-        fetch(url).then((result) => {
-            result.json().then((data) => {
+        completelist.innerHTML = "";
 
-                if(data.error === 101){
-                    alert("Enter Correct Source and Destination");
-                    document.getElementByClassName('content').style.display = "none";
-                    return;
-                }else{
-                    document.getElementById('content').style.display = "block";
-                }
+        path.textContent = "Total Time Taken : " + data.timeTaken + "mins";
 
-                completelist.innerHTML = ""
-                // completelistnumber.innerHTML = ""
+        var stations = data.stations;
 
-                path.textContent = "Total Time taken : " + data.timeTaken
+        var n = stations.length;
 
-                var stations = data.stations
+        // let stationNumber = 1;
+        for (let i = 0; i < n; i++) {
+          if (stations[i].length == 3) {
+            completelist.innerHTML +=
+              "<div class='main-container'>" +
+              "<div class='line-container'>" +
+              "<div id='theline-container-" +
+              (i + 1) +
+              "' class='theline-container' style='background-color:" +
+              stations[i][1] +
+              ";'>" +
+              "</div>" +
+              "<div class='thelist-number'  style='background-color:" +
+              stations[i][1] +
+              ";'>" +
+              // (i + 1) +
+              "</div>" +
+              "</div>" +
+              "<div class='font-semibold text-white-800 ml-3'>" +
+              stations[i][0] +
+              "</div>" +
+              "</div>" +
+              "<div class='main-containerinterchange' style='box-shadow:1px 1px 10px " + stations[i][2]+",-1px -1px 10px " + stations[i][1] + ";'>" +
+              // "<div class='line-container'>" +
+              //   "<div id='theline-container-" +
+              //   (i + 1) +
+              //   "' class='theline-container'>" +
+              //   "</div>" +
+              //   "<div class='thelist-number'>" +
+              //   (i + 1) +
+              //   "</div>" +
+              // "</div>" +
+              "<div class='font-semibold text-white-800 ml-3' style='font-size: 3rem; color:rgb(155,155,155);'>" +
+              " <i class='fa-solid fa-shuffle'>"+"</i>" +
+              // stations[i][0] +
+              " Change Here - From " +
+              stations[i][1] +
+              " line to " +
+              stations[i][2] +
+              " line" +
+              "</div>" +
+              "</div>" +
 
-                var n = stations.length
-
-                for (let i = 0; i < n; i++) {
-                    completelist.innerHTML += "<div class='main-container'>" +
-                      "<div class='line-container'>" +
-                      "<div id='theline-container-" + (i+1) + "' class='theline-container'>" + "<div class='thelist-number'>" + (i + 1) + "</div>" + "</div>" +
-                      "</div>" +
-                      "<div class='font-semibold text-white-800 ml-3'>" + stations[i] + "</div>" +
-                      "</div>";
-                  }
-                  
-            })
-        })
-    }
+              "<div class='main-container'>" +
+              "<div class='line-container'>" +
+              "<div id='theline-container-" +
+              (i + 1) +
+              "' class='theline-container' style='background-color:" +
+              stations[i][2] +
+              ";'>" +
+              "</div>" +
+              "<div class='thelist-number'  style='background-color:" +
+              stations[i][2] +
+              ";'>" +
+              // (i + 2) +
+              "</div>" +
+              "</div>" +
+              "<div class='font-semibold text-white-800 ml-3'>" +
+              stations[i][0] +
+              "</div>" +
+              "</div>";
+          } else {
+            completelist.innerHTML +=
+              "<div class='main-container'>" +
+              "<div class='line-container'>" +
+              "<div id='theline-container-" +
+              (i + 1) +
+              "' class='theline-container' style='background-color:" +
+              stations[i][1] +
+              ";'>" +
+              "</div>" +
+              "<div class='thelist-number'  style='background-color:" +
+              stations[i][1] +
+              ";'>" +
+              // (i + 1) +
+              "</div>" +
+              "</div>" +
+              "<div class='font-semibold text-white-800 ml-3'>" +
+              stations[i][0] +
+              "</div>" +
+              "</div>";
+          }
+        }
+        
+        path.scrollIntoView();
+      });
+    });
+  }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function show() {
-//     var s1 = document.getElementById("source1").value;
-//     var s2 = document.getElementById("source2").value;
-
-//     if (!s1 && !s2) {
-//         document.getElementByClassName('content').style.display = "none";
-//     } else if (s1 != "" && s2 != "" && s1 !== s2) {
-//         document.getElementById('content').style.display = "block";
-//     } else if (s1 === s2) {
-       
-//         document.getElementById('content').style.display = "none";
-//     } else if (s1 == "" && s2 != "") {
-        
-//         document.getElementById('content').style.display = "none";
-//     } else if (s2 == "") {
-
-//         document.getElementById('content').style.display = "none";
-//     } else {
-//         document.getElementById('content').style.display = "none";
-//     }
-
-
-// }
-// for (let i = 0; i < n; i++) {
-
-//     completelistnumber.innerHTML += "<div>" + (i + 1) + "</div>";
-//     completelist.innerHTML += "<div class='font-semibold text-white-800'>" + stations[i] + "</div>";
-
-// }
-
-
+// let first = false, last = false;
+// if (i === 0) { first = true; }
+// if (i === n - 1) { last = true; }
+// let thelistNumberClass = " ";
+// if (first) { thelistNumberClass += " first"; }
+// if (last) { thelistNumberClass += " last"; }
+// " + thelistNumberClass + " tis will be used in if in the line container class

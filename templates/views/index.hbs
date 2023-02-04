@@ -1,73 +1,100 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Delhi Metro Route</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+
+	<script src="
+			https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+	<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
+" rel="stylesheet" />
 
 </head>
 
 <body>
 
-	<section class="wrapper">
+	<div class="wrapper">
 
-		<header>
+		<div class="header">
 
-			<nav>
-				<div class="logo">
-					<h1 style="font-size: 20px;"> DELHI METRO ROUTE </h1>
-				</div>
-				<div class="menu">
-					<a href="#" style="font-size:large">Home</a>
-					<a href="/about">About</a>
+			<div class="container-navbar">
+				<nav>
+					<div class="logo">
+						<h1 style="font-size: 20px;"> DELHI METRO ROUTE </h1>
+					</div>
 
-					<a href="#">api</a>
-				</div>
-			</nav>
+					<div class="nav-items" id="myDIV">
+						<div class="tab"><a href="">Home</a></div>
+						<div class="tab"><a href="/about">About</a></div>
+						<div class="tab"><a href="">API</a></div>
+					</div>
+				</nav>
+			</div>
 
-			<main>
-				<section>
-					<h3>METRO ROUTE NAVIGATOR</h3>
-					<div class="cont">
+			<div class="container">
+				<div class="main-section">
+					<div class="main-section-part1">
+						<h3>METRO ROUTE NAVIGATOR</h3>
+					</div>
+
+					<div class="main-section-part2">
 						<div class="heading">FIND YOUR ROUTE
-							{{!-- <span class="change_content"> </span>
-							<span style="margin-top: -10px;"> | </span> --}}
 							<span class="role"> </span>
 						</div>
 					</div>
 
-					<input href="#" class="source" type=text list="stations1" name="myStation"
-						placeholder="SELECT SOURCE" id="source1" oninput="updateText(this)"></input>
+					<div class="main-section-part3">
+						<div class="select-container">
+							<input class="source" type="text" name="myStation" placeholder="SELECT SOURCE"
+								id="source1" />
+							<ul id="station-list-1" class="dropdown">
 
-					<input href="#" class="dest" type=text list="stations2" name="myStation"
-						placeholder="SELECT DESTINATION" id="source2" oninput="updateText(this)"></input>
+							</ul>
 
-					<button class="btn-pink" href="#content"
-						onclick="getpath(source, destination) ; window.location.href = '#content';"
-						id="routeButton">FIND ROUTE</button>
+							<input href="#" class="dest" type="text" name="myStation" placeholder="SELECT DESTINATION"
+								id="source2" />
 
+							<ul id="station-list-2" class="dropdown">
 
+							</ul>
+						</div>
 
-				</section>
-			</main>
-		</header>
+						<button class="btn-pink" href="#thelist" id="routeButton">
+							FIND ROUTE</button>
 
-	</section>
+					</div>
+					<script src="/js/FrontendEffect.js"></script>
 
-	<section class="display-metro-stations" id="content">
+				</div>
+			</div>
 
+			{{! Display Part }}
+			<div class="display-metro-stations" id="content">
 
-		<div id="path"></div>
-		<div id="thelist">
+				<h1 id="path"></h1>
+				<div id="thelist">
+				</div>
+
+			</div>
 		</div>
-		
-	</section>
-	<script src="/js/FrontendEffect.js"></script>
+
+	</div>
+	<script src="https://kit.fontawesome.com/00775a0389.js" crossorigin="anonymous"></script>
 	<script src="/js/script.js"></script>
+
 </body>
 
 </html>
