@@ -6,8 +6,6 @@ const validator = require('./utils/stationValidator.js')
 const firebaseApp = require("./utils/firebaseInitialization")
 const formatter = require('./utils/StationsFormattor.js')
 
-
-
 const app = express()
 const port = process.env.PORT || 3000
 
