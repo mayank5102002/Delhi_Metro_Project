@@ -1,43 +1,226 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Delhi Metro Route</title>
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-</head>
-<body>
+<html lang="en">
 
-<header  class="wrapper">
-	
-<nav>
-	<div class="logo"> <h1 style="font-size: 20px;"> DELHI METRO ROUTE </h1> </div>
-	<div class="menu">
-		<a href="/" style="font-size:large" class="tab">Home</a>
-		<a href="#" class="active">About</a>
-		
-		<a href="#" class="tab">api</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
-	</div>
-    </nav>
-   
-    <div class="info">
-    <h1 class="name">ABOUT</h1>
-    <p class="details">Lo aperiam nis est msit,mmodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi distinctio aperiam voluptatibus laboriosam beatae ratione facilis eveniet dignissimos, recusandae obcaecati quod, rem nemo aspernatur est molestias enim tempore facere earum.</p>
+    <link rel="stylesheet" href="./css/style(about).css" />
+    {{! <link rel="stylesheet" href="./css/style.css"> }}
+
+  </head>
+
+  <body>
+
     <div class="wrapper">
-        <div class="button">
-           <div class="icon">
-              <i class="fab fa-facebook-f"></i>
-           </div>
-           <span>Facebook</span>
+
+      <div class="container-navbar" id="cont-nav">
+        <nav>
+          <div class="logo">
+            <h1> DELHI METRO ROUTE </h1>
+          </div>
+
+          <div class="three-lines">
+            <button class="arrows-btn" onclick="displayLines()">
+              <div class="arrows"></div>
+              <div class="arrows"></div>
+              <div class="arrows"></div>
+            </button>
+          </div>
+
+          <div class="nav-items" id="myDIV">
+            <div class="tab posi"><a href="/">Home</a></div>
+            <div class="active posi"><a href="/about">About</a></div>
+            <div class="tab posi"><a href="">API</a></div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="introduction">
+
+        <div class="intro-text">
+          <div class="intropart1">
+            <h1>Introduction</h1>
+            <div class="para">Welcome to our metro project, a state-of-the-art
+              transportation solution designed to improve the daily commute of
+              citizens. Our goal is to provide a safe, efficient, and reliable
+              mode of transportation that connects communities and promotes
+              sustainable urban development. With advanced technology, modern
+              infrastructure, and a commitment to customer satisfaction, we aim
+              to revolutionize the way people travel in our city. Join us on
+              this exciting journey towards a better tomorrow, and experience
+              the ease of seamless travel with our metro project
+            </div>
+          </div>
+
+          <div class="part2">
+            <div class="para">
+              The Metro project allows users to plan their route from one
+              destination to another with ease. The process of showing a route
+              from one path to another is made simple through the use of
+              state-of-the-art mapping technologies and algorithms. Users simply
+              enter their starting point and desired destination, and the system
+              calculates the quickest and most efficient route for them to take.
+              The route is displayed showing each metro station, along with
+              information about the estimated travel time and any transfer
+              points along the way. The time calculation takes into account
+              various factors such as, the number of stops along the route, and
+              the expected time it takes to travel between each stop.
+            </div>
+          </div>
+
+          <div class="intropart3">
+            <div class="para">
+              <Disclaimer>
+                <b id="color-red">Disclaimer:</b>
+                The information provided by the website i.e. timings, and route,
+                is indicative and subject to change. Commuters are advised to
+                plan their journey in advance as actual journey time may vary as
+                per the prevailing conditions. We will not be liable for any
+                direct or indirect loss (of any nature whatsoever) arising from
+                the material contained in this website.
+              </Disclaimer>
+            </div>
+          </div>
         </div>
+        <div class="intro-image">
+          <img
+            src="./img/metro_screenshot.png"
+            alt="Metro Project"
+            class="metroimg"
+          />
         </div>
       </div>
-    </div>
-</div>
-    
-        
-            
 
-      
-    
+      <!-- Tech Stack -->
+
+      <div class="tech-stack">
+        <h2>Tech Stack Used</h2>
+        <div class="skills-container">
+          <img title="HTML" src="./img/HTML.png" alt="" class="skills-logo" />
+          <img title="CSS" src="./img/CSS.png" alt="" class="skills-logo" />
+          <img
+            title="Javascript"
+            src="./img/Javascript.svg"
+            alt=""
+            class="skills-logo"
+          />
+          <img
+            title="ExpessJs"
+            src="./img/Express.png"
+            alt=""
+            class="skills-logo"
+          />
+          <img
+            title="NodeJS"
+            src="./img/NodeJs.svg"
+            alt=""
+            class="skills-logo"
+          />
+
+        </div>
+      </div>
+
+      <!-- Developers -->
+      <div class="developers">
+        <h2>Our Developers</h2><br />
+        <div class="information">
+
+          <div class="dev1">
+            <h4>Mayank Kharb</h4>
+            <p>Back End Developer</p>
+            <div class="icon-wrapperinfo">
+              <a href="https://www.linkedin.com/in/mayank-kharab-2515731ab/" class="footer-icon-link" target="_blank">
+                <i class="fa-brands fa-linkedin icon"></i></a>
+              {{!-- <a href="instagram.com/mayankharb.exe/" class="footer-icon-link" target="_blank"><i
+                  class="fa-brands fa-instagram icon"
+                ></i></a> --}}
+            </div>
+          </div>
+
+          <div class="dev2">
+            <h4>Ritika Sharma</h4>
+            <p>Front End Developer</p>
+            <div class="icon-wrapperinfo">
+              <a href="https://www.linkedin.com/in/ritika-sharma-0a1b0822b/" class="footer-icon-link" target="_blank">
+                <i class="fa-brands fa-linkedin icon"></i></a>
+              {{!-- <a href="https://www.instagram.com/ritika.kaushik1707/" class="footer-icon-link" target="_blank"><i
+                  class="fa-brands fa-instagram icon"
+                ></i></a> --}}
+            </div>
+          </div>
+
+          <div class="dev3">
+            <h4>Kuldeep Saini</h4>
+            <p>Front End Developer</p>
+            <div class="icon-wrapperinfo">
+              <a href="https://www.linkedin.com/in/kuldeep-saini-31ab95220/" class="footer-icon-link" target="_blank">
+                <i class="fa-brands fa-linkedin icon"></i></a>
+              {{!-- <a href="https://www.instagram.com/kuldeepsaini_23/" class="footer-icon-link" target="_blank"><i
+                  class="fa-brands fa-instagram icon"
+                ></i></a> --}}
+            </div>
+          </div>
+
+          <div class="dev4">
+            <h4>Tania Bhardwaj</h4>
+            <p>Front End Developer</p>
+            <div class="icon-wrapperinfo">
+              <a href="https://www.linkedin.com/in/tania-bhardwaj-24621b192/" class="footer-icon-link" target="_blank">
+                <i class="fa-brands fa-linkedin icon"></i></a>
+              {{!-- <a href="https://www.instagram.com/tannu__sharma21/" class="footer-icon-link" target="_blank"><i
+                  class="fa-brands fa-instagram icon"
+                ></i></a> --}}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      {{!-- <footer>
+        <div class="content-footer">
+          <div class="footer-text">For Github Repository
+
+          </div>
+
+          <div class="icon-wrapper">
+            <!-- <a href="" class="footer-icon-link" target="_blank">
+            <i class="fa-brands fa-linkedin icon"></i></a> -->
+            <a href="" class="footer-icon-link" target="_blank"><i
+                class="fa-brands fa-github icon"
+              ></i></a>
+            <!-- <a href="" class="footer-icon-link" target="_blank"><i
+              class="fa-brands fa-twitter icon"></i></a>
+          <a href="" class="footer-icon-link" target="_blank"><i
+              class="fa-brands fa-instagram icon"></i></a>
+          <a href="" class="footer-icon-link" target="_blank"><i
+              class="fa-brands fa-youtube icon"></i></a> -->
+          </div>
+        </div>
+      </footer> --}}
+
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/00775a0389.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function displayLines() { var x = document.getElementById("myDIV"); var x2
+      = document.getElementById("cont-nav"); if (x.style.display === "block") {
+      x.style.display = "none"; x2.style.marginBottom = "3rem" ; } else {
+      x.style.display = "block"; x2.style.marginBottom = "10rem" ; } }
+
+    </script>
+
+  </body>
+
+</html>

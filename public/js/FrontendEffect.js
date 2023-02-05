@@ -310,10 +310,10 @@ var s2 = document.getElementById("source2");
 
 var typeData = new Typed(".role", {
   strings: [
-    "Nehru Place",
-    "Raj Bagh",
-    "Kalkaji",
-    "Hauz Khas"
+    "Nehru Enclave",
+    "ANAND VIHAR ISBT",
+    "Kalkaji Mandir",
+    "Chandni Chwok"
   ],
   loop: true,
   typeSpeed: 100,
@@ -382,3 +382,33 @@ const tabs = document.querySelectorAll(".tab a");
             this.classList.add("active");
         })
       });
+
+
+
+//Three lines working
+
+function displayLines() {
+  var x = document.getElementById("myDIV");
+  var x2 = document.getElementById("cont-nav");
+
+
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    x2.style.marginBottom = "3rem" ;
+  } else {
+    x.style.display = "block";
+    x2.style.marginBottom = "10rem" ;
+  }
+
+}
+
+
+// Image load first
+
+const img = new Image();
+img.src = "./img/metro2blur.png";
+img.onload = function() {
+  document.querySelector(".header").style.display = "block";
+};
+
+
