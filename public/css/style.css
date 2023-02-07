@@ -457,6 +457,7 @@ nav {
   .logo h1 {
     font-size: 1rem;
     text-align: center;
+    margin-left: 1.2rem;
   }
 
   .nav-items {
