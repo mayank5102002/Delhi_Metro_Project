@@ -19,19 +19,25 @@ button.addEventListener("click", (e) => {
       icon: "error",
       title: "Oops...",
       text: "Please Enter Source Station",
+      confirmButtonColor: "#28a745"
     });
+    
   } else if (!destination) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Please Enter Destination Station",
+      text: "Please Enter Source Station",
+      confirmButtonColor: "#28a745"
     });
+    
   } else if (source === destination) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Please Enter Source and Destination Different",
+      text: "Please Enter Source Station",
+      confirmButtonColor: "#28a745"
     });
+    
   } else {
     console.log("Scroll");
     
@@ -58,8 +64,10 @@ function getPath(source, destination) {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Please Enter Correct Source and Destination",
+            text: "Please Enter Source Station",
+            confirmButtonColor: "#28a745"
           });
+          
           document.getElementByClassName("content").style.display = "none";
           return;
         } else {
