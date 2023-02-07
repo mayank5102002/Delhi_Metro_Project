@@ -65,7 +65,7 @@ nav {
   color: white;
 }
 
-.active {
+.active a{
   color: #00b894;
 }
 
@@ -83,6 +83,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  background-color: transparent;
 }
 
 .arrows {
@@ -122,11 +123,13 @@ nav {
   text-transform: uppercase;
   gap: 0.8rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .backspace {
   min-width: 30rem;
-  max-width: 10vw;
+  
 }
 .role {
   color: #00b894;
@@ -339,7 +342,7 @@ nav {
     font-size: 1em;
     min-width: auto;
     max-width: none;
-    /* text-align: center; */
+    text-align: center;
   }
 
   .role{
@@ -623,3 +626,5 @@ nav {
     transform: rotate(360deg);
   }
 }
+
+

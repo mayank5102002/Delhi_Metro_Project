@@ -313,7 +313,7 @@ var typeData = new Typed(".role", {
     "Nehru Enclave",
     "ANAND VIHAR ISBT",
     "Kalkaji Mandir",
-    "Chandni Chwok"
+    "Chandni Chowk"
   ],
   loop: true,
   typeSpeed: 100,
