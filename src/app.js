@@ -36,6 +36,10 @@ app.get('/about', (req, res) => {
     res.render('about')
 })
 
+app.get('/api', (req, res) => {
+    res.render('API')
+})
+
 //Path for path page API to get path for the route
 app.get('/path', (req, res) => {
     //Setting content-type as json for api call
