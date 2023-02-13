@@ -26,7 +26,7 @@ button.addEventListener("click", (e) => {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Please Enter Source Station",
+      text: "Please Enter Destination Station",
       confirmButtonColor: "#28a745"
     });
     
@@ -34,7 +34,7 @@ button.addEventListener("click", (e) => {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Please Enter Source Station",
+      text: "Both Source and Destination are Same",
       confirmButtonColor: "#28a745"
     });
     
@@ -43,13 +43,7 @@ button.addEventListener("click", (e) => {
     
     getPath(source, destination);
     
-    if (window.innerWidth <= 1200) {
-      setTimeout(function() {
-        callDisclaimer();
-      }, 2600);
-    } else {
-      callDisclaimer();
-    }
+   
     
   }
 });
@@ -64,7 +58,7 @@ function getPath(source, destination) {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Please Enter Source Station",
+            text: "Please Enter Source and Destination Correct",
             confirmButtonColor: "#28a745"
           });
           
@@ -73,6 +67,13 @@ function getPath(source, destination) {
         } else {
           loadingBar.style.display = "block";
           section.style.display = "block";
+          if (window.innerWidth <= 1200) {
+            setTimeout(function() {
+              callDisclaimer();
+            }, 2600);
+          } else {
+            callDisclaimer();
+          }
 
         }
 
