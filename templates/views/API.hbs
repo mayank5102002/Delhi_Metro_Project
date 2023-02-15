@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>Delhi Loco</title>
     <link
       href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
       rel="stylesheet"
     />
-    
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/style(about).css" />
-     <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./css/api.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
   </head>
 
@@ -24,7 +24,7 @@
       <div class="container-navbar" id="cont-nav">
         <nav>
           <div class="logo">
-            <h1> DELHI METRO ROUTE </h1>
+            <h1> DELHI LOCO </h1>
           </div>
 
           <div class="three-lines">
@@ -43,8 +43,301 @@
         </nav>
       </div>
 
+      <div class="api-introduction">
+        <h2>Introduction</h2>
+        <div class="api-documentation">
+          Delhi Loco API which provides Delhi Metro Route for selected source
+          and destination. It is completely free and can be used by anyone in
+          their personal/commerical projects.
+          <br />
+          Please check below for the proper documentation to call the api and
+          sample results.
+        </div>
+      </div>
 
-       </div>
+      {{! next div }}
+
+      <div class="link-format">
+        <p>
+          Link format:-
+          https://www.delhiloco.in/path?source=__SOURCE__&destination=__DESTINATION__
+        </p>
+        <p>
+          In the above link format in place of "__SOURCE__" put your required
+          source station and
+          <br />
+          in place of "__DESTINATION__" put your required destination station.
+          <br />
+          Reference for station names is provided below, and for api call you
+          will have to call a GET request.
+        </p>
+
+        <br />
+        <br />
+
+        <p>For example:- if you want route from Nehru Place to Nehru Enclave,
+          the link for api call would be
+          <br />
+
+          <a
+            target="_blank"
+            href="https://dmrc.onrender.com/path?source=Nehru%20Place&destination=Nehru%20Enclave"
+          >https://www.delhiloco.in/path?source=Nehru%20Place&destination=Nehru%20Enclave</a>
+          <br />
+
+        </p>
+      </div>
+
+      <div class="apilastDivision">
+        <h2>Station Reference</h2>
+        <div class="stationss">
+          <ol type="1">
+            <li>Adarsh Nagar</li>
+            <li>Aiims</li>
+            <li>Airport (T-3)</li>
+            <li>Akshardham</li>
+            <li>Anand Vihar ISBT</li>
+            <li>Arjan Garh</li>
+            <li>Arthala</li>
+            <li>Ashok Park Main</li>
+            <li>Ashram</li>
+            <li>Azadpur</li>
+            <li>Badarpur Border</li>
+            <li>Badkhal Mor</li>
+            <li>Bahadurgarh City</li>
+            <li>Barakhamba Road</li>
+            <li>Bata Chowk</li>
+            <li>Belvedere Towers</li>
+            <li>Bhikaji Cama Place</li>
+            <li>Botanical Garden</li>
+            <li>Brigadier Hoshiyar Singh</li>
+            <li>Central Secretariat</li>
+            <li>Chandni Chowk</li>
+            <li>Chawri Bazar</li>
+            <li>Chhatarpur</li>
+            <li>Chirag Delhi</li>
+            <li>Civil Lines</li>
+            <li>Cyber City</li>
+            <li>Dabri Mor - Janakpuri South</li>
+            <li>Dashrath Puri</li>
+            <li>Delhi Aerocity</li>
+            <li>Delhi Cantonment</li>
+            <li>Delhi Gate</li>
+            <li>Dhansa Bus Stand</li>
+            <li>Dhaula Kuan</li>
+            <li>Dilli Haat - INA</li>
+            <li>Dilshad Garden</li>
+            <li>Durgabai Deshmukh South Campus</li>
+            <li>Dwarka</li>
+            <li>Dwarka Mor</li>
+            <li>Dwarka Sector 10</li>
+            <li>Dwarka Sector 11</li>
+            <li>Dwarka Sector 12</li>
+            <li>Dwarka Sector 13</li>
+            <li>Dwarka Sector 14</li>
+            <li>Dwarka Sector 21</li>
+            <li>Dwarka Sector 8</li>
+            <li>Dwarka Sector 9</li>
+            <li>ESI - Basaidarapur</li>
+            <li>East Azad Nagar</li>
+            <li>East Vinod Nagar - Mayur Vihar-II</li>
+            <li>Escorts Mujesar</li>
+            <li>Ghevra Metro Station</li>
+            <li>Ghitorni</li>
+            <li>Gokulpuri</li>
+            <li>Golf Course</li>
+            <li>Govindpuri</li>
+            <li>Greater Kailash</li>
+            <li>Green Park</li>
+            <li>Guru Dronacharya</li>
+            <li>Guru Teg Bahadur(GTB) Nagar</li>
+            <li>HUDA City Centre</li>
+            <li>Haiderpur Badli Mor</li>
+            <li>Harkesh Nagar Okhla</li>
+            <li>Hauz Khas</li>
+            <li>Hindon River</li>
+            <li>I.P.Extension</li>
+            <li>IFFCO Chowk</li>
+            <li>IIT Delhi</li>
+            <li>ITO</li>
+            <li>Inderlok</li>
+            <li>Indraprastha</li>
+            <li>JLN(Jawaharlal Nehru) Stadium</li>
+            <li>Jafrabad</li>
+            <li>Jahangirpuri</li>
+            <li>Jama Masjid</li>
+            <li>Jamia Millia Islamia</li>
+            <li>Janakpuri East</li>
+            <li>Janakpuri West</li>
+            <li>Jangpura</li>
+            <li>Janpath</li>
+            <li>Jasola Vihar Shaheen Bagh</li>
+            <li>Jasola-Apollo</li>
+            <li>Jhandewalan</li>
+            <li>Jhilmi</li>
+            <li>Johri Enclave</li>
+            <li>Jor Bagh</li>
+            <li>Kailash Colony</li>
+            <li>Kalindi Kunj</li>
+            <li>Kalkaji Mandir</li>
+            <li>Kanhaiya Nagar</li>
+            <li>Karkarduma</li>
+            <li>Karkarduma Court</li>
+            <li>Karol Bagh</li>
+            <li>Kashmere Gate</li>
+            <li>Kaushambi</li>
+            <li>Keshav Puram</li>
+            <li>Khan Market</li>
+            <li>Kirti Nagar</li>
+            <li>Kohat Enclave</li>
+            <li>Krishna Nagar</li>
+            <li>Lajpat Nagar</li>
+            <li>Lal Qila</li>
+            <li>Laxmi Nagar</li>
+            <li>Lok Kalyan Marg</li>
+            <li>MG Road</li>
+            <li>Madipur</li>
+            <li>Maharaja Surajmal Stadium</li>
+            <li>Majlis Park</li>
+            <li>Major Mohit Sharma Rajendra Nagar</li>
+            <li>Malviya Nagar</li>
+            <li>Mandawali - West Vinod Nagar</li>
+            <li>Mandi House</li>
+            <li>Mansarovar Park</li>
+            <li>Maujpur - Babarpur</li>
+            <li>Mayapuri</li>
+            <li>Mayur Vihar Extension</li>
+            <li>Mayur Vihar Pocket I</li>
+            <li>Mayur Vihar-I</li>
+            <li>Mewla Maharajpur</li>
+            <li>Model Town</li>
+            <li>Mohan Estate</li>
+            <li>Mohan Nagar</li>
+            <li>Moolchand</li>
+            <li>Moti Nagar</li>
+            <li>Moulsari Avenue</li>
+            <li>Mundka</li>
+            <li>Mundka Industrial Area(MIA)</li>
+            <li>Munirka</li>
+            <li>NHPC Chowk</li>
+            <li>Najafgarh</li>
+            <li>Nangli</li>
+            <li>Nangloi</li>
+            <li>Nangloi Railway Station</li>
+            <li>Naraina Vihar</li>
+            <li>Nawada</li>
+            <li>Neelam Chowk Ajronda</li>
+            <li>Nehru Enclave</li>
+            <li>Nehru Place</li>
+            <li>Netaji Subhash Place</li>
+            <li>New Ashok Nagar</li>
+            <li>New Delhi</li>
+            <li>Nirman Vihar</li>
+            <li>Noida City Centre</li>
+            <li>Noida Electronic City</li>
+            <li>Noida Sector 15</li>
+            <li>Noida Sector 16</li>
+            <li>Noida Sector 18</li>
+            <li>Okhla Bird Sanctuary</li>
+            <li>Okhla NSIC</li>
+            <li>Okhla Vihar</li>
+            <li>Old Faridabad</li>
+            <li>Palam</li>
+            <li>Panchsheel Park</li>
+            <li>Pandit Shree Ram Sharma</li>
+            <li>Paschim Vihar East</li>
+            <li>Paschim Vihar West</li>
+            <li>Patel Chowk</li>
+            <li>Patel Nagar</li>
+            <li>Peeragarhi</li>
+            <li>Phase-1</li>
+            <li>Phase-2</li>
+            <li>Phase-3</li>
+            <li>Pitampura</li>
+            <li>Pratap Nagar</li>
+            <li>Preet Vihar</li>
+            <li>Pul Bangash</li>
+            <li>Punjabi Bagh</li>
+            <li>Punjabi Bagh West</li>
+            <li>Qutab Minar</li>
+            <li>R. K. Puram</li>
+            <li>Raj Bagh</li>
+            <li>Raja Nahar Singh(Ballabhgarh)</li>
+            <li>Rajdhani Park</li>
+            <li>Rajendra Place</li>
+            <li>Rajiv Chowk</li>
+            <li>Rajouri Garden</li>
+            <li>Ramakrishna Ashram Marg</li>
+            <li>Ramesh Nagar</li>
+            <li>Rithala</li>
+            <li>Rohini East</li>
+            <li>Rohini Sector 18, 19</li>
+            <li>Rohini West</li>
+            <li>Sadar Bazaar Cantonment</li>
+            <li>Saket</li>
+            <li>Samaypur Badli</li>
+            <li>Sant Surdas (Sihi)</li>
+            <li>Sarai</li>
+            <li>Sarai Kale Khan - Nizamuddin</li>
+            <li>Sarita Vihar</li>
+            <li>Sarojini Nagar</li>
+            <li>Satguru Ram Singh Marg</li>
+            <li>Sector 28</li>
+            <li>Sector 55-56</li>
+            <li>Sector-34 Noida</li>
+            <li>Sector-42-43</li>
+            <li>Sector-52 Noida</li>
+            <li>Sector-53-54</li>
+            <li>Sector-54 Chowk</li>
+            <li>Sector-59 Noida</li>
+            <li>Sector-61 Noida</li>
+            <li>Sector-62 Noida</li>
+            <li>Seelampur</li>
+            <li>Shadipur</li>
+            <li>Shahdara</li>
+            <li>Shaheed Nagar</li>
+            <li>Shaheed Sthal(New Bus Adda)</li>
+            <li>Shakurpur</li>
+            <li>Shalimar Bagh</li>
+            <li>Shankar Vihar</li>
+            <li>Shastri Nagar</li>
+            <li>Shastri Park</li>
+            <li>Shiv Vihar</li>
+            <li>Shivaji Park</li>
+            <li>Shivaji Stadium</li>
+            <li>Shyam Park</li>
+            <li>Sikanderpur</li>
+            <li>Sir M. Vishweshwaraiah Moti Bagh</li>
+            <li>South Extension</li>
+            <li>Subhash Nagar</li>
+            <li>Sukhdev Vihar</li>
+            <li>Sultanpur</li>
+            <li>Supreme Court</li>
+            <li>Tagore Garden</li>
+            <li>Terminal 1-IGI Airport</li>
+            <li>Tikri Border</li>
+            <li>Tikri Kalan</li>
+            <li>Tilak Nagar</li>
+            <li>Tis Hazari</li>
+            <li>Trilokpuri-Sanjay Lake</li>
+            <li>Tughlakabad Station</li>
+            <li>Udyog Bhawan</li>
+            <li>Udyog Nagar</li>
+            <li>Uttam Nagar East</li>
+            <li>Uttam Nagar West</li>
+            <li>Vaishali</li>
+            <li>Vasant Vihar</li>
+            <li>Vidhan Sabha</li>
+            <li>Vinobapuri</li>
+            <li>VishwaVidyalaya</li>
+            <li>Welcome</li>
+            <li>Yamuna Bank</li>
+
+          </ol>
+        </div>
+      </div>
+
+    </div>
 
     <script
       src="https://kit.fontawesome.com/00775a0389.js"
