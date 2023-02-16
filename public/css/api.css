@@ -22,36 +22,107 @@
   height: 100vh;
 }
 
-.api-introduction h2{
-    color: white;
+.api-introduction {
+  width: 90%;
+  margin: 4rem auto;
+  margin-bottom: 1rem;
 }
 
-.api-documentation{
-    color: white;
+.api-introduction h2 {
+  color: white;
+  font-size: 3.5rem;
+  text-align: center;
 }
 
-.link-format{
-    margin: 2rem;
-    color: white;
-    display: flex;
-    flex-direction: column;
+.api-documentation {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.link-format {
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.link-format p {
+  font-size: 1.5rem;
+}
+
+.link-format a {
+  text-decoration: underline;
+  color: rgb(64, 144, 218);
+}
+
+.apilastDivision {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.apilastDivision h2 {
+  color: white;
+  font-size: 3.5rem;
+}
+
+li {
+  color: white;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stationss {
+  width: 90%;
+  margin: 0 auto;
 }
 
 
-.link-format a{
-    text-decoration: underline;
-    color: rgb(64, 144, 218);
+
+@media (max-width: 700px) {
+  .api-introduction h2 {
+    font-size: 3.1rem;
+  }
+
+  .api-documentation {
+    font-size: 1.1rem;
+  }
+
+  .link-format p {
+    font-size: 1.1rem;
+  }
+
+  .apilastDivision h2 {
+    font-size: 3.1rem;
+  }
+
+  li {
+    font-size: 1.1rem;
+  }
 }
 
-.apilastDivision{
-    display: flex;
-    flex-direction: column;
-}
 
-.apilastDivision h2{
-    color: white;
-}
 
-li{
-    color: white;
-}
+@media (max-width: 500px) {
+    .api-introduction h2 {
+      font-size: 2.3rem;
+    }
+  
+    .api-documentation {
+      font-size: 0.6rem;
+    }
+  
+    .link-format p {
+      font-size: 0.6rem;
+    }
+  
+    .apilastDivision h2 {
+      font-size: 2.3rem;
+    }
+  
+  
+  }
+  
