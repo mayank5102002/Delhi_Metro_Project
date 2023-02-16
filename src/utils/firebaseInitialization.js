@@ -1,12 +1,12 @@
-
 //Setting up firebase admin and firebase admin key
-const admin = require('firebase-admin')
+const admin = require("firebase-admin");
 var serviceAccount = require("../data/firebase_admin_key.json");
 
 //Initializing the firebase admin
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://delhi-metro-project-f08e5-default-rtdb.asia-southeast1.firebasedatabase.app"
+  databaseURL:
+    "https://delhi-metro-project-f08e5-default-rtdb.asia-southeast1.firebasedatabase.app",
 });
 
 //Getting data from firebase
@@ -28,23 +28,20 @@ function addStationToNumsData(stations, nums) {
 }
 
 function computeData(key, value, ref, data) {
-  var n = key.length
+  var n = key.length;
 
   for (let i = 0; i < n; i++) {
-    data[key[i]] = value[i]
+    data[key[i]] = value[i];
   }
 
-  ref.set(data)
+  ref.set(data);
 }
 
-function add(){
-  addStationToNumsData(
-    ["KASHMERE GATE", "KALKAJI MANDIR"],
-    [2, 3]
-  )
+function add() {
+  addStationToNumsData(["KASHMERE GATE", "KALKAJI MANDIR"], [2, 3]);
 }
 
 module.exports = {
   addStationToNumsData,
-  add
-}
+  add,
+};

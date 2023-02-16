@@ -22,25 +22,7 @@
     <div class="wrapper">
 
       <div class="container-navbar" id="cont-nav">
-        <nav>
-          <div class="logo">
-            <h1> DELHI LOCO </h1>
-          </div>
-
-          <div class="three-lines">
-            <button class="arrows-btn" onclick="displayLines()">
-              <div class="arrows"></div>
-              <div class="arrows"></div>
-              <div class="arrows"></div>
-            </button>
-          </div>
-
-          <div class="nav-items" id="myDIV">
-            <div class="tab posi"><a href="/">Home</a></div>
-            <div class="tab posi"><a href="/about">About</a></div>
-            <div class="active posi"><a href="/API">API</a></div>
-          </div>
-        </nav>
+        {{>nav}}
       </div>
 
       <div class="api-introduction">
@@ -49,7 +31,8 @@
           Delhi Loco API which provides Delhi Metro Route for selected source
           and destination. It is completely free and can be used by anyone in
           their personal/commerical projects.
-          <br /> <br>
+          <br />
+          <br />
           Please check below for the proper documentation to call the api and
           sample results.
         </div>
@@ -60,15 +43,17 @@
       <div class="link-format">
         <p>
           Link format:-
-          https://www.delhiloco.in/path?source=__SOURCE__&destination=__DESTINATION__
+          https://delhiloco.in/path?source=__SOURCE__&destination=__DESTINATION__
         </p>
-        <br><br>
+        <br /><br />
         <p>
           In the above link format in place of "__SOURCE__" put your required
           source station and
-          <br /> <br>
+          <br />
+          <br />
           in place of "__DESTINATION__" put your required destination station.
-          <br /> <br>
+          <br />
+          <br />
           Reference for station names is provided below, and for api call you
           will have to call a GET request.
         </p>
@@ -82,8 +67,8 @@
 
           <a
             target="_blank"
-            href="https://dmrc.onrender.com/path?source=Nehru%20Place&destination=Nehru%20Enclave"
-          >https://www.delhiloco.in/path?source=Nehru%20Place&destination=Nehru%20Enclave</a>
+            href="https://delhiloco.in/path?source=Nehru%20Place&destination=Nehru%20Enclave"
+          >https://delhiloco.in/path?source=Nehru%20Place&destination=Nehru%20Enclave</a>
           <br />
 
         </p>

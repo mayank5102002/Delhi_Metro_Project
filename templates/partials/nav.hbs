@@ -1,0 +1,31 @@
+<nav>
+  <div class="logo">
+    <h1> DELHI LOCO </h1>
+  </div>
+
+  <div class="three-lines">
+    <button class="arrows-btn" onclick="displayLines()">
+      <div class="arrows"></div>
+      <div class="arrows"></div>
+      <div class="arrows"></div>
+    </button>
+  </div>
+
+  <div class="nav-items" id="myDIV">
+    <div class="tab posi" id="home"><a href="/">Home</a></div>
+    <div class="tab posi" id="about"><a href="/about">About</a></div>
+    <div class="tab posi" id="api"><a href="/api">API</a></div>
+  </div>
+</nav>
+
+<script>
+    if('{{title}}' == 'Home'){
+        document.getElementById('home').classList.add('active');
+    }
+    else if('{{title}}' == 'About'){
+        document.getElementById('about').classList.add('active');
+    }
+    else if('{{title}}' == 'API'){
+        document.getElementById('api').classList.add('active');
+    }
+</script>
