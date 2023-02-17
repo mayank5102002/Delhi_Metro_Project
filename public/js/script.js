@@ -7,46 +7,49 @@ const loadingBar = document.getElementById("loading-bar");
 var completelist = document.getElementById("thelist");
 var section = document.getElementById("content");
 
-document.addEventListener("DOMContentLoaded", function() {
-button.addEventListener("click", (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
 
-  const source = source1.value;
-  const destination = source2.value;
+    const source = source1.value;
+    const destination = source2.value;
 
-  if (!source) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Please Enter Source Station",
-      confirmButtonColor: "#28a745"
-    });
-    
-  } else if (!destination) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Please Enter Destination Station",
-      confirmButtonColor: "#28a745"
-    });
-    
-  } else if (source === destination) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Both Source and Destination are Same",
-      confirmButtonColor: "#28a745"
-    });
-    
-  } else {
-    console.log("Scroll");
-    
-    getPath(source, destination);
-    
-   
-    
-  }
-});
+    if (!source) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please Enter Source Station",
+        confirmButtonColor: "#28a745",
+      });
+    } else if (!destination) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please Enter Destination Station",
+        confirmButtonColor: "#28a745",
+      });
+    } else if (source === destination) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Both Source and Destination are Same",
+        confirmButtonColor: "#28a745",
+      });
+    } else {
+      console.log("Scroll");
+
+      getPath(source, destination);
+      callDisclaimer();
+
+      // if (window.innerWidth <= 1200) {
+      //   setTimeout(function() {
+      //     callDisclaimer();
+      //   }, 1600);
+      // } else {
+      //   callDisclaimer();
+      // }
+    }
+  });
 });
 function getPath(source, destination) {
   if (source != destination) {
@@ -59,22 +62,14 @@ function getPath(source, destination) {
             icon: "error",
             title: "Oops...",
             text: "Please Enter Source and Destination Correct",
-            confirmButtonColor: "#28a745"
+            confirmButtonColor: "#28a745",
           });
-          
+
           document.getElementByClassName("content").style.display = "none";
           return;
         } else {
           loadingBar.style.display = "block";
           section.style.display = "block";
-          if (window.innerWidth <= 1200) {
-            setTimeout(function() {
-              callDisclaimer();
-            }, 2600);
-          } else {
-            callDisclaimer();
-          }
-
         }
 
         completelist.innerHTML = "";
@@ -85,7 +80,6 @@ function getPath(source, destination) {
 
         var n = stations.length;
 
-        // let stationNumber = 1;
         for (let i = 0; i < n; i++) {
           if (stations[i].length == 3) {
             completelist.innerHTML +=
@@ -98,24 +92,20 @@ function getPath(source, destination) {
               "<div class='thelist-number'  style='background-color:" +
               stations[i][1] +
               ";'>" +
-
               "</div>" +
               "</div>" +
               "<div class='maincontainertext'>" +
               stations[i][0] +
               "</div>" +
               "</div>" +
-
               "<div class='main-containerinterchange' style='box-shadow:1px 1px 10px opacity: 1;' " +
               stations[i][2] +
               ",-1px -1px 10px " +
               stations[i][1] +
               ";'>" +
-
               "<div class='maininterchangetext'>" +
               " <i class='fa-solid fa-shuffle'>" +
               "</i>" +
-
               " Change Here - From " +
               stations[i][1] +
               " line to " +
@@ -123,9 +113,6 @@ function getPath(source, destination) {
               " line" +
               "</div>" +
               "</div>" +
-
-
-
               "<div class='main-container' style='opacity: 1;'>" +
               "<div class='line-container'>" +
               "<div id='theline-container-" +
@@ -162,15 +149,12 @@ function getPath(source, destination) {
               "</div>";
           }
         }
-
         path.scrollIntoView();
         loadingBar.style.display = "none";
-        
       });
     });
   }
 }
-
 
 function callDisclaimer() {
   const Toast = Swal.mixin({
@@ -194,6 +178,3 @@ function callDisclaimer() {
       "Disclaimer: The information provided by the website i.e. timings, and route, is indicative and subject to change. Commuters are advised to plan their journey in advance as actual journey time may vary as per the prevailing conditions. We will not be liable for any direct or indirect loss (of any nature whatsoever) arising from the material contained in this website.",
   });
 }
-
-
-
