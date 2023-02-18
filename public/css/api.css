@@ -87,13 +87,13 @@ li {
     font-size: 3.1rem;
   }
 
-  .api-documentation {
+  /* .api-documentation {
     font-size: 1.1rem;
   }
 
   .link-format p {
     font-size: 1.1rem;
-  }
+  } */
 
   .apilastDivision h2 {
     font-size: 3.1rem;
@@ -109,14 +109,6 @@ li {
 @media (max-width: 500px) {
     .api-introduction h2 {
       font-size: 2.3rem;
-    }
-  
-    .api-documentation {
-      font-size: 0.6rem;
-    }
-  
-    .link-format p {
-      font-size: 0.6rem;
     }
   
     .apilastDivision h2 {
