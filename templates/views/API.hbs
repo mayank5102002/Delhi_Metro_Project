@@ -22,25 +22,7 @@
     <div class="wrapper">
 
       <div class="container-navbar" id="cont-nav">
-        <nav>
-          <div class="logo">
-            <h1> DELHI LOCO </h1>
-          </div>
-
-          <div class="three-lines">
-            <button class="arrows-btn" onclick="displayLines()">
-              <div class="arrows"></div>
-              <div class="arrows"></div>
-              <div class="arrows"></div>
-            </button>
-          </div>
-
-          <div class="nav-items" id="myDIV">
-            <div class="tab posi"><a href="/">Home</a></div>
-            <div class="tab posi"><a href="/about">About</a></div>
-            <div class="active posi"><a href="/API">API</a></div>
-          </div>
-        </nav>
+        {{>nav}}
       </div>
 
       <div class="api-introduction">
@@ -84,7 +66,6 @@
         <p>For example:- if you want route from Nehru Place to Nehru Enclave,
           the link for api call would be
           <br />
-
           <span><a
               target="_blank"
               href="https://dmrc.onrender.com/path?source=Nehru%20Place&destination=Nehru%20Enclave"

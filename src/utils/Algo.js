@@ -3,11 +3,11 @@
 
 //This is Djikstra algorithm to get the correct route from source node to destination node for Delhi Metro
 
-const metro_data = require('../data/Metro_data')
-const numToStations = metro_data.numToStations
-const stationsToNum = metro_data.stationsToNum
-const graph = metro_data.graph
-const interchangeStation = metro_data.interchangeStation
+const metro_data = require("../data/Metro_data");
+const numToStations = metro_data.numToStations;
+const stationsToNum = metro_data.stationsToNum;
+const graph = metro_data.graph;
+const interchangeStation = metro_data.interchangeStation;
 
 //Djikstra Algorithm
 function djikstra(src, dest, distance, parent) {
@@ -47,7 +47,11 @@ function djikstra(src, dest, distance, parent) {
 function printPath(src, dest, distance, parent) {
   var res = "";
   res =
-    "\tRoute between " + numToStations[dest][0] + " and " + numToStations[src][0] + " is :\n\t";
+    "\tRoute between " +
+    numToStations[dest][0] +
+    " and " +
+    numToStations[src][0] +
+    " is :\n\t";
   var p = dest;
   while (parent[p] != -1) {
     res += numToStations[p][0] + " -> ";
@@ -64,41 +68,39 @@ function printPath(src, dest, distance, parent) {
 
 //Function to get path for source and destination
 function getPath(src, dest, distance, parent) {
-
   //Initilising path object
   var path = {};
 
   //Putting variables for path object
   if (distance[dest] == null) {
-    path.timeTaken = "null"
+    path.timeTaken = "null";
   } else {
-    path.timeTaken = distance[dest]
+    path.timeTaken = distance[dest];
   }
 
-  path.stationsInOrder = []
-
+  path.stationsInOrder = [];
 
   //Starting a loop to get the path and put in path object
   var p = dest;
   while (parent[p] != -1) {
-    path.stationsInOrder.push(numToStations[p])
+    path.stationsInOrder.push(numToStations[p]);
     p = parent[p];
-  }  
+  }
 
-  path.stationsInOrder.push(numToStations[p])
+  path.stationsInOrder.push(numToStations[p]);
 
-  path.totalStations = path.stationsInOrder.length
+  path.totalStations = path.stationsInOrder.length;
 
   //returning path object
-  return path
+  return path;
 }
 
 //Drive code
 function driverCode(source, destination) {
   var n = metro_data.noOfStations;
 
-  var src = stationsToNum[source]
-  var dest = stationsToNum[destination]
+  var src = stationsToNum[source];
+  var dest = stationsToNum[destination];
 
   //Check if the source node is an interchange station
   // If it is, then changing it's data so as to make it as a common station for all the sub lines
@@ -107,11 +109,11 @@ function driverCode(source, destination) {
     //
     //  This is done as because the common station is already having others as neighbours
     //  but those others don't have that station as its neighbour
-    // 
+    //
     //      So, we add the source as it's neighbours neighbour
     //      because Djikstra is run in reverse and we don't need to actually get to destination
     //      as it will be the start node when running,
-    //      but we need to get to the source node as it will be the end node    
+    //      but we need to get to the source node as it will be the end node
     //      so, the down code is adding the current source
     //
     for (var i = 0; i < graph[src].length; i++) {
@@ -132,7 +134,6 @@ function driverCode(source, destination) {
 
   // // Undoing the changes made to the data for the source node
   if (interchangeStation[src]) {
-
     //Removing the source node from the data after use
     for (var i = 0; i < graph[src].length; i++) {
       var node = graph[src][i];
@@ -140,7 +141,7 @@ function driverCode(source, destination) {
     }
   }
 
-  return res
+  return res;
 }
 
-module.exports = { driverCode }
+module.exports = { driverCode };
